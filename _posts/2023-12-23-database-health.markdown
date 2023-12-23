@@ -65,22 +65,6 @@ SELECT count(*) FROM pg_stat_activity;
 This command helps in understanding the load on your database.
 
 
-## Managing Memory Connections
-### The Role of Memory in Databases
-Memory management is a critical aspect of database performance. It involves efficiently allocating memory for various database operations and connections.
-### Monitoring Memory Usage
-High memory usage can lead to slower performance or even crashes. It's essential to monitor how much memory is being used and adjust configurations as needed to ensure stability and speed.
-
-To view the current number of active connections to your PostgreSQL database, use:
-
-```
-SELECT count(*) FROM pg_stat_activity;
-
-```
-
-This command helps in understanding the load on your database.
-
-
 ## Leveraging pganalyze for Database Optimization
 ### What is pganalyze?
 pganalyze is a powerful tool designed for PostgreSQL database monitoring. It provides insights into query performance, index usage, and maintenance needs.

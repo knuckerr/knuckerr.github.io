@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comprehensive Technical Architecture Overview</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Other head elements -->
+</head>
+<body>
+    <header class="header-nav">
+    <div class="container">
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <!-- Add other navigation links as needed -->
+        </ul>
+    </nav>
+    </div>
+</header>
+
+    
+    <main>
+        <div class="container">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Comprehensive Technical Architecture Overview</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2023-12-23T20:27:00+02:00" itemprop="datePublished">Dec 23, 2023
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h3 id="architecture-of-essential-services">Architecture of Essential Services</h3>
+<p>The architecture encompasses two main services: Service A and Service B, each with its own dedicated database. Hosted on Amazon Web Services (AWS) via Elastic Container Service (ECS), Service A is integral for executing critical business logic and relies on data from Service B. This inter-service communication is conducted via a streamlined REST API.</p>
+
+<h3 id="addressing-scaling-issues-amidst-traffic-increase">Addressing Scaling Issues Amidst Traffic Increase</h3>
+<p>As traffic escalates, Service A’s performance necessitates additional resources. This is achieved by scaling up the number of instances. However, this leads to a new challenge: Service A’s increased capacity overwhelms Service B, necessitating a scale-up of Service B. While this resolves immediate issues, it introduces complexities at the database level.</p>
+
+<p>Scaling up services results in an increased number of database connections. This surge can lead to database errors due to the inherent maximum connection limits. Surpassing these limits results in failed requests.</p>
+
+<h3 id="advanced-scaling-techniques-using-aws-cloudwatch">Advanced Scaling Techniques Using AWS CloudWatch</h3>
+<p>For a more efficient scaling solution, AWS CloudWatch metrics can be instrumental. By monitoring metrics such as the number of requests per instance and average request latency, you can set a target threshold that triggers autoscaling. This method is more efficient and cost-effective. Detailed guidance on setting up CloudWatch metrics can be found <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">here</a>.</p>
+
+<h4 id="example">Example:</h4>
+<ul>
+  <li><strong>Metric</strong>: Average Request Latency</li>
+  <li><strong>Threshold</strong>: If latency exceeds 2 seconds over a 5-minute period</li>
+  <li><strong>Action</strong>: Trigger the addition of more instances</li>
+</ul>
+
+<h3 id="database-connection-pooling-with-rds-proxy">Database Connection Pooling with RDS Proxy</h3>
+<p>To address database bottlenecks, implementing a database connection pooling mechanism using AWS RDS Proxy is effective. RDS Proxy allows for efficient management of database connections, thereby improving application scalability and database efficiency.</p>
+
+<h4 id="working-of-rds-proxy">Working of RDS Proxy</h4>
+<ul>
+  <li><strong>Connection Pooling</strong>: RDS Proxy maintains a pool of connections to the database, reducing the time and resources required to establish new connections.</li>
+  <li><strong>Handling Bursts</strong>: It effectively manages sudden spikes in database requests, ensuring stability.</li>
+  <li><strong>Reduced Database Load</strong>: By pooling connections, the number of direct connections to the database is significantly reduced, thereby lowering the load on the database.</li>
+</ul>
+
+<h4 id="example-1">Example:</h4>
+<ul>
+  <li><strong>Configuration</strong>: Set up RDS Proxy with a max connection pool size of 100.</li>
+  <li><strong>Scenario</strong>: During a traffic surge, Service A and B require 150 connections each.</li>
+  <li><strong>Outcome</strong>: RDS Proxy efficiently manages these requests using its connection pool, preventing database overload.</li>
+</ul>
+
+<p>For detailed steps on setting up RDS Proxy, you can refer to the official AWS documentation <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html">here</a>.</p>
+
+<p>This integrated approach, combining CloudWatch for dynamic scaling and RDS Proxy for efficient database connection management, ensures a robust, scalable, and cost-effective architecture capable of handling varying traffic loads efficiently.</p>
+
+  </div><a class="u-url" href="/scalability/perfomance/2023/12/23/scale-domino.html" hidden></a>
+</article>
+
+        </div>
+    </main>
+    
+</body>
+</html>

@@ -8,7 +8,6 @@
 </head>
 <body>
     <header class="header-nav">
-    <h1>Welcome to My Blog</h1>
     <div class="container">
     <nav>
         <ul>
@@ -23,6 +22,7 @@
 
     
     <main>
+        <div class="container">
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
@@ -86,20 +86,6 @@ you can run:</p>
 
 <p>This command helps in understanding the load on your database.</p>
 
-<h2 id="managing-memory-connections-1">Managing Memory Connections</h2>
-<h3 id="the-role-of-memory-in-databases-1">The Role of Memory in Databases</h3>
-<p>Memory management is a critical aspect of database performance. It involves efficiently allocating memory for various database operations and connections.</p>
-<h3 id="monitoring-memory-usage-1">Monitoring Memory Usage</h3>
-<p>High memory usage can lead to slower performance or even crashes. It’s essential to monitor how much memory is being used and adjust configurations as needed to ensure stability and speed.</p>
-
-<p>To view the current number of active connections to your PostgreSQL database, use:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT count(*) FROM pg_stat_activity;
-
-</code></pre></div></div>
-
-<p>This command helps in understanding the load on your database.</p>
-
 <h2 id="leveraging-pganalyze-for-database-optimization">Leveraging pganalyze for Database Optimization</h2>
 <h3 id="what-is-pganalyze">What is pganalyze?</h3>
 <p>pganalyze is a powerful tool designed for PostgreSQL database monitoring. It provides insights into query performance, index usage, and maintenance needs.</p>
@@ -113,9 +99,10 @@ you can run:</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>Maintaining the health of your database indexes, regular vacuuming, and effective memory connection management are crucial for database performance. Tools like pganalyze serve as invaluable resources in this endeavor, providing detailed insights and actionable recommendations. By focusing on these aspects, you can ensure that your database remains fast, efficient, and reliable.</p>
 
-  </div><a class="u-url" href="/jekyll/update/2023/12/23/database-health.html" hidden></a>
+  </div><a class="u-url" href="/database/perfomance/2023/12/23/database-health.html" hidden></a>
 </article>
 
+        </div>
     </main>
     
 </body>

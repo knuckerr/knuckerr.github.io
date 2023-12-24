@@ -2,19 +2,22 @@ body {
     font-family: 'Roboto Mono', monospace; /* Modern yet retro-inspired monospaced font */
     background-color: #252525; /* Deep grey for a mature retro feel */
     color: #f2f2f2; /* Light text for contrast */
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 25px;
-    line-height: 1.6;
 }
 
 .header-nav {
-    background-color: #9fd587;
     color: #252525; /* Dark text for contrast */
-    padding: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
     text-align: center;
+}
+
+.header-nav a:link {
+ color: #a5d29b;
+
+}
+
+.header-nav a:visited {
+ color: #a5d29b;
+
 }
 
 header h1 {
@@ -110,10 +113,12 @@ pre code .number { color: #d19a66; }
 
 main {
     background-color: #323232; /* Slightly lighter grey for the main content */
-    padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin-top: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 25px;
+    line-height: 1.6;
 }
 
 .blog-posts article {

@@ -2,7 +2,7 @@
 layout: post
 title:  "Database health checks"
 date:   2023-12-23 16:55:56 +0200
-categories: jekyll update
+categories: Database perfomance
 ---
 
 In the fast-paced world of database management, efficiency and speed are paramount. One often overlooked aspect of database performance is the health of indexes. They are the cornerstone of quick data retrieval in a database, but they can become less effective over time. Additionally, understanding the significance of vacuuming and memory connections in a database is crucial for maintaining optimal performance. Tools like pganalyze offer a comprehensive solution for monitoring and enhancing these aspects. In this post, we'll delve into why these elements are vital and how you can leverage pganalyze to keep your database at peak performance.
